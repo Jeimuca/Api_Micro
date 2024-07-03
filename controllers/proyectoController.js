@@ -20,7 +20,7 @@ const crearProyecto = async (req = request, res = response) => {
 
         // Validar que los campos necesarios están presentes en req.body
         const { TipoProyecto, cliente, Etapa, Universidad } = data;
-        if (!TipoProyecto || !TipoProyecto._id || !cliente || !cliente._id || !etapa || !etapa._id || !universidad || !universidad._id) {
+        if (!TipoProyecto || !TipoProyecto._id || !cliente || !cliente._id || !Etapa || !Etapa._id || !Universidad || !Universidad._id) {
             return res.status(400).json({ msg: 'Datos de entrada incompletos' });
         }
 
