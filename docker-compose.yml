@@ -9,7 +9,9 @@ services:
       - "4001:4001"  
     networks: 
       - proyectos-app  
-
+    environment: 
+        - MONGO_URI=${MONGO_URI}
+        - PORT= 4001
       
   balanceador:
     container_name: balanceador
