@@ -1,12 +1,23 @@
 version: "3.8"
 services:
-  proyectos-monolitica:
+  proyectos-micro:
     container_name: proyectos-micro
     image: proyectos-micro:v1
     build: 
       context: .
     ports: 
       - "4001:4001"  
+    networks: 
+      - proyectos-app  
+
+      
+  balanceador:
+    container_name: balanceador
+    image: balanceador:v1
+    build: 
+      context: ./balanceador
+    ports: 
+      - "4002:80"  
     networks: 
       - proyectos-app  
 
